@@ -1,0 +1,30 @@
+<div class="card">
+    <form class="form-group" [formGroup]="petForm"  (ngSubmit)="submit()" >
+        <div>
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" required formControlName="name" >
+    </div>
+    <div class="form-group">
+        <label for="age">Age</label>
+        <input type="number" class="form-control" id="age" required formControlName="age"required>
+    </div>
+    <div class="form-group">
+        <label for="type">Type</label>
+        <select class="form-control" id="type" required formControlName="type" required>
+          <option *ngFor="let t of type" [value]="t">{{t}}</option>
+        </select>
+      </div>
+      <div class="form-check">
+        <label>
+            <input type="radio" value="black" formControlName="color" required>
+              <span>Black</span>
+          </label>
+          <label>
+            <input type="radio" value="white" formControlName="color" required>
+              <span>White</span>
+          </label>
+      </div>
+      <div class="error" *ngIf="!petForm.valid && petForm.touched">{{message}}</div>
+      <button type="submit" class='btn-lg btn-primary'>Create pet</button>
+    </form>
+    </div>

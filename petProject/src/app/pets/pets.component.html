@@ -1,0 +1,8 @@
+<div>
+    <h2 style="text-align: center;">Pets</h2>
+    <div class="card" *ngFor="let pet of pets">
+        <p>{{ pet.name | titlecase}}</p>
+        <p>{{ pet.age }} years old</p>
+        <p> The coolest {{ pet.color}} {{pet.type}} in the Universe </p>
+      </div>
+    </div>
